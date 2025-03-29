@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap'); 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Amiri', serif; 
+}
+body {
+    overflow-x: hidden;
+    position: relative;
+    background-color: #032841;
+}
+section {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #032841, #0a2e51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em; 
+    }
+
+    section {
+        padding: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em; 
+    }
+
+    section {
+        padding: 10px;
+    }
+}
+
+h2 {
+    font-size: 3em;
+    color: #fff;
+    position: relative;
+    text-shadow: 0 0 4px #fff;
+    animation: glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, fadeIn 3s ease-in-out forwards;
+    opacity: 0;
+    text-align: center;
+    direction: rtl;
+}
+h2::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -130px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border-left: 10px solid #fff;
+    transform: rotate(-30deg);
+}
+.star {
+    position: absolute;
+    background-color: #fff; 
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 
+                0 0 20px #fff,
+                0 0 40px #fff,
+                0 0 80px #fff; 
+    animation: animate linear infinite;
+}
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 4px #fff;
+    }
+    50% {
+        text-shadow: 0 0 8px #fff;
+    }
+    100% {
+        text-shadow: 0 0 4px #fff;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
